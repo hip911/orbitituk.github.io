@@ -1,5 +1,5 @@
 ---
-title: "No Sidebara"
+title: "No Sidebar"
 description: "All content, all the time."
 menu: main
 weight: 80

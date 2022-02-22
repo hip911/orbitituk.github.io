@@ -1,4 +1,138 @@
-<!doctype html><html lang=en><head><title>Job management with Kubernetes | Orbit IT - Cloud Native DevOps Consultancy</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,user-scalable=no"><link rel=stylesheet href=/style.css><meta property="og:title" content="Job management with Kubernetes"><meta property="og:description" content="Kubernetes is the leading container orchestration platform. This case study focuses on the Job resource kind and how it could be used to help with long running jobs."><meta property="og:type" content="article"><meta property="og:url" content="https://orbitit.uk/portfolio/workload_management_k8s_jobs/"><meta property="article:published_time" content="2021-08-20T00:00:00+00:00"><meta property="article:modified_time" content="2021-08-20T00:00:00+00:00"></head><body class=is-preload><div id=page-wrapper><div id=header><h1><a href=https://orbitit.uk/ id=logo>Orbit IT - Cloud Native DevOps Consultancy</a></h1><nav id=nav><ul><li><a href=/>Home</a><li><a href=/consulting/>Consulting</a><li><a href=/implementation/>Implementation</a><li><a href=/maintenance/>Maintenance</a><li><a href=/posts/>Blog</a><li><a href=/portfolio/>Portfolio</a></ul></nav></div><section class="wrapper style1"><div class=container><div><div id=content><article><header><h2>Job management with Kubernetes</h2><p></p><time>Aug 20, 2021</time><ul class=tags><li><a href=/tags/cloud-native/>cloud native</a><li><a href=/tags/kubernetes/>kubernetes</a><li><a href=/tags/job-management/>job management</a><li><a href=/tags/long-running-job/>long running job</a><li><a href=/tags/python/>python</a><li><a href=/tags/scaling/>scaling</a></ul></header><span class="image featured"><img src=/images/k8s_small.png alt></span><p>Our client in focus was utilising Machine Learning models on 8x GPU machines to serve customer orders ( deepfake workloads with virtual models ). Their naive solution was working - running as a service continuously costing $10k+ per month for a single machine.
-They seriously needed an on-demand scheduling solution as a startup they lacked the constant load and the machines were very underutilised.</p><p>The solution was found with the help of a Kubernetes <a href=https://kubernetes.io/docs/concepts/workloads/controllers/job/>Job</a> and to rewrite their old worker service to a &lsquo;work to completion&rsquo; container. Their old service split in half to a simple custom workload scheduler - which only created the kubernetes jobs - and the rest of their code which was responsible for the computation.
+<!doctype html><html lang=en>
+<head>
+<title>Job management with Kubernetes | Orbit IT - Cloud Native DevOps Consultancy</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=no">
+<link rel=stylesheet href=/style.css>
+<meta property="og:title" content="Job management with Kubernetes">
+<meta property="og:description" content="Kubernetes is the leading container orchestration platform. This case study focuses on the Job resource kind and how it could be used to help with long running jobs.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://orbitit.uk/portfolio/workload_management_k8s_jobs/"><meta property="article:section" content="portfolio">
+<meta property="article:published_time" content="2021-08-20T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-08-20T00:00:00+00:00">
+</head>
+<body class=is-preload>
+<div id=page-wrapper><div id=header>
+<h1><a href=https://orbitit.uk/ id=logo>
+Orbit IT - Cloud Native DevOps Consultancy
+</a></h1>
+<nav id=nav>
+<ul>
+<li>
+<a href=/>Home</a>
+<li>
+<a href=/consulting/>Consulting</a>
+<li>
+<a href=/implementation/>Implementation</a>
+<li>
+<a href=/maintenance/>Maintenance</a>
+<li>
+<a href=/posts/>Blog</a>
+<li class=current>
+<a href=/portfolio/>Portfolio</a>
+</ul>
+</nav>
+</div>
+<section class="wrapper style1">
+<div class=container>
+<div>
+<div id=content>
+<article>
+<header>
+<h2>Job management with Kubernetes</h2>
+<p></p>
+<time>Aug 20, 2021</time>
+<ul class=tags><li><a href=/tags/kubernetes/>kubernetes</a><li><a href=/tags/long-running-job/>long running job</a><li><a href=/tags/job-management/>job management</a><li><a href=/tags/cloud-native/>cloud native</a><li><a href=/tags/scaling/>scaling</a><li><a href=/tags/python/>python</a>
+</ul>
+</header>
+<span class="image featured"><img src=/images/k8s_small.png alt></span>
+<p>Our client in focus was utilising Machine Learning models on 8x GPU machines to serve customer orders ( deepfake workloads with virtual models ). Their naive solution was working - running as a service continuously costing $10k+ per month for a single machine.
+They seriously needed an on-demand scheduling solution as a startup they lacked the constant load and the machines were very underutilised.</p>
+<p>The solution was found with the help of a Kubernetes <a href=https://kubernetes.io/docs/concepts/workloads/controllers/job/>Job</a> and to rewrite their old worker service to a &lsquo;work to completion&rsquo; container. Their old service split in half to a simple custom workload scheduler - which only created the kubernetes jobs - and the rest of their code which was responsible for the computation.
 Once an order arrived to the system, the job scheduler was able to translate it to a Job by directly talking to the <a href=https://kubernetes.io/docs/concepts/overview/kubernetes-api/>Kubernetes API</a>. The Job resource had <a href=https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector>Node Selectors</a> and <a href=https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/#concepts>Tolerations</a> attached to run it only on certain type of machine (<a href=https://cloud.google.com/kubernetes-engine/docs/how-to/preemptible-vms>preemptible</a> 8x GPU), triggering the autoscaling on a node pool, which scaled back to zero having no workloads.
-Their whole monthly GCP running cost were instantly crippled to under $400 and if more orders arrived at the same time there was no waiting for their customer as multiple Jobs could be scheduled parallel following their desired limits if needed</p></article></div></div></div></section><div id=footer><div class=container><div class=row><section class="col-3 col-6-narrower col-12-mobilep"><h3>Links</h3><ul class=links><li><a href=/about-us/>About us</a><li><a href=/about-us/>Careers</a><li><a href=#>Sed et dapibus quis</a><li><a href=#>Rutrum accumsan dolor</a><li><a href=#>Mattis rutrum accumsan</a><li><a href=#>Suspendisse varius nibh</a><li><a href=#>Sed et dapibus mattis</a></ul></section><section class="col-3 col-6-narrower col-12-mobilep"><h3>More Links to Stuff</h3><ul class=links><li><a href=#>Duis neque nisi dapibus</a><li><a href=#>Sed et dapibus quis</a><li><a href=#>Rutrum accumsan sed</a><li><a href=#>Mattis et sed accumsan</a><li><a href=#>Duis neque nisi sed</a><li><a href=#>Sed et dapibus quis</a><li><a href=#>Rutrum amet varius</a></ul></section><section class="col-6 col-12-narrower"><h3>Get In Touch</h3><form method=post action="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hello@orbitit.uk"><div class="row gtr-50"><div class="col-6 col-12-mobilep"><input type=text name=name id=name placeholder=Name></div><div class="col-6 col-12-mobilep"><input type=email name=email id=email placeholder=Email></div><div class=col-12><textarea name=message id=message placeholder=Message rows=5></textarea></div><div class=col-12><ul class=actions><li><input type=submit class="button alt" value="Send Message"></ul></div></div></form></section></div></div><ul class=icons><li><a href=# class="icon brands fa-twitter"><span class=label>Twitter</span></a><li><a href=# class="icon brands fa-facebook-f"><span class=label>Facebook</span></a><li><a href=# class="icon brands fa-github"><span class=label>GitHub</span></a><li><a href=# class="icon brands fa-linkedin-in"><span class=label>LinkedIn</span></a><li><a href=https://creativecommons.org/ class="icon brands fa-creative-commons"><span class=label>Creative Commons</span></a></ul><div class=copyright><ul class=menu><li>© ORBIT IT 2022. All rights reserved</ul></div></div></div><script src=/js/jquery.min.js></script><script src=/js/jquery.dropotron.min.js></script><script src=/js/browser.min.js></script><script src=/js/breakpoints.min.js></script><script src=/js/util.js></script><script src=/js/main.js></script></body></html>
+Their whole monthly GCP running cost were instantly crippled to under $400 and if more orders arrived at the same time there was no waiting for their customer as multiple Jobs could be scheduled parallel following their desired limits if needed</p>
+</article>
+</div>
+</div>
+</div>
+</section><div id=footer>
+<div class=container>
+<div class=row>
+<section class="col-3 col-6-narrower col-12-mobilep">
+<h3>Links</h3>
+<ul class=links>
+<li><a href=/about-us/>About us</a>
+<li><a href=/about-us/>Careers</a>
+<li><a href=#>Sed et dapibus quis</a>
+<li><a href=#>Rutrum accumsan dolor</a>
+<li><a href=#>Mattis rutrum accumsan</a>
+<li><a href=#>Suspendisse varius nibh</a>
+<li><a href=#>Sed et dapibus mattis</a>
+</ul>
+</section>
+<section class="col-3 col-6-narrower col-12-mobilep">
+<h3>More Links to Stuff</h3>
+<ul class=links>
+<li><a href=#>Duis neque nisi dapibus</a>
+<li><a href=#>Sed et dapibus quis</a>
+<li><a href=#>Rutrum accumsan sed</a>
+<li><a href=#>Mattis et sed accumsan</a>
+<li><a href=#>Duis neque nisi sed</a>
+<li><a href=#>Sed et dapibus quis</a>
+<li><a href=#>Rutrum amet varius</a>
+</ul>
+</section>
+<section class="col-6 col-12-narrower">
+<h3>Get In Touch</h3>
+<form method=post action="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hello@orbitit.uk">
+<div class="row gtr-50">
+<div class="col-6 col-12-mobilep">
+<input type=text name=name id=name placeholder=Name>
+</div>
+<div class="col-6 col-12-mobilep">
+<input type=email name=email id=email placeholder=Email>
+</div>
+<div class=col-12>
+<textarea name=message id=message placeholder=Message rows=5></textarea>
+</div>
+<div class=col-12>
+<ul class=actions>
+<li><input type=submit class="button alt" value="Send Message">
+</ul>
+</div>
+</div>
+</form>
+</section>
+</div>
+</div>
+<ul class=icons>
+<li><a href=# class="icon brands fa-twitter">
+<span class=label>Twitter</span>
+</a>
+<li><a href=# class="icon brands fa-facebook-f">
+<span class=label>Facebook</span>
+</a>
+<li><a href=# class="icon brands fa-github">
+<span class=label>GitHub</span>
+</a>
+<li><a href=# class="icon brands fa-linkedin-in">
+<span class=label>LinkedIn</span>
+</a>
+<li><a href=https://creativecommons.org/ class="icon brands fa-creative-commons">
+<span class=label>Creative Commons</span>
+</a>
+</ul>
+<div class=copyright>
+<ul class=menu>
+<li>© ORBIT IT 2022. All rights reserved
+</ul>
+</div>
+</div>
+</div><script src=/js/jquery.min.js></script>
+<script src=/js/jquery.dropotron.min.js></script>
+<script src=/js/browser.min.js></script>
+<script src=/js/breakpoints.min.js></script>
+<script src=/js/util.js></script>
+<script src=/js/main.js></script>
+</body>
+</html>
