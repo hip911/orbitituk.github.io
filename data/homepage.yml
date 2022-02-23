@@ -1,7 +1,7 @@
 banner:
   enable: true
   image: "images/word_art_main.jpg"
-  contents: "**ORBIT IT:** _your go-to devops consultancy_"
+  contents: "**ORBIT IT:** _your go-to DevSecOps consultancy_"
   //button:
   //  contents: "Learn More"
   //  url: "#"

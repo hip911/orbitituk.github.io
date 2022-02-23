@@ -8,24 +8,21 @@ image_alt: "Implementation services of Orbit IT"
 tags: ["devops", "terraform", "gcp", "kubernetes", "cicd", "gitops"]
 sidebar_left: implementation
 ---
-Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-consequat etiam lorem ipsum dolor sit amet nullam.
+Whether you are starting your cloud journey as a greenfield project or your team is already well established and you are ready to embark on the next journey in your software development lifecycle, we are keen to support your needs to keep your business growing
+Our skilled engineers can support your internal teams as required to remove communication barries and will be able to provide industry best practice solutions
 
-### And Yet Another Subheading
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.
+### Cloud Architecture
 
-Phasellus odio risus, faucibus et viverra vitae, eleifend ac purus. Praesent mattis, enim
-quis hendrerit porttitor, sapien tortor viverra magna, sit amet rhoncus nisl lacus nec arcu.
-Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
-fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
-Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.
+Architecture is the cornerstone of every project. It's importance underpins the lifecycles, maintenance effort and costs of your whole project. It is important to get the required foundations right to enable the required growth
+
+### Cloud Security
+
+Security is often an afterthought on a product which pump complications and costs up in the late phases. Regarding our work you can be sure these concerns are being address from the very beginning
+
+### Infrastructure automation
+
+Especially when using public cloud services it is important to have your configuration codified (known as infrastructure-as-code) - this will ease cross-cutting changes (eg launch a new environment) which fall outside of the normal daily workflow of your engineers. It can be huge effort to link all pieces of a new environment to match a previous one by hand, not to mention the wasted time and effort. 
+
+### Deployment automation
+
+When your team and codebase reached a certain size it starts being critical to have as much automation as possible. This way everyone can keep spending time on what they are good at. Your developers can focus on the code for business logic and you can trust us with building self-service solutions that will provide effective rollouts
