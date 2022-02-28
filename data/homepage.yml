@@ -26,10 +26,10 @@ items:
     contents: Whether your organisation is a start-up with limited resources to hire talent on its own or a larger company who needs specialists in certain technologies, we will be focusing our your needs to support your product and enable growth
   - type: posts
     #heading: Recent Posts
-    content_type: posts
-    max: 4
+    content_type: portfolio
+    max: 6
   - type: cta
-    contents: Are you ready to continue your quest?
+    contents: Are you interested to work with us?
     button:
-      contents: Insert Coin
-      url: "#"
+      contents: Get In Touch
+      url: "mailto:hello@orbitit.uk"
