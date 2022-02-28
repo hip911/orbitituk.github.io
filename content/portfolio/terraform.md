@@ -1,7 +1,8 @@
 ---
-title: The Fourth Thing
-image: images/pic04.jpg
-date: "2020-01-04T00:00:00"
+title: Terraform environments
+image: images/terraform-architecture-components-workflow.jpg
+//date: "2020-01-04T00:00:00"
+weight: 30
 tags:
   - example
   - lorem ipsum

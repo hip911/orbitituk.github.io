@@ -26,3 +26,7 @@ Especially when using public cloud services it is important to have your configu
 ### Deployment automation
 
 When your team and codebase reached a certain size it starts being critical to have as much automation as possible. This way everyone can keep spending time on what they are good at. Your developers can focus on the code for business logic and you can trust us with building self-service solutions that will provide effective rollouts
+
+### Software development
+
+Not as our primary services but we can take on minor task on custom Python and PHP codebases. Please get in touch with how do you think we can help you

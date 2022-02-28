@@ -1,5 +1,5 @@
 banner:
-  enable: true
+  enable: false
   image: "images/word_art_main.jpg"
   contents: "**ORBIT IT:** _your go-to DevSecOps consultancy_"
   //button:
@@ -12,21 +12,18 @@ items:
     - title: Product mindset
       icon: fa-paper-plane
       content: >
-        Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl
-        amet mattis, sed a rutrum accumsan sed. Suspendisse eu.
+        One of our primary focus in our work is enablement supporting *your* product
     - title: Customer-centric
-      icon: fa-pencil-alt
+      icon: fa-compass
       content: >
-        Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl
-        amet mattis, sed a rutrum accumsan sed. Suspendisse eu.
+        With many years of industry experience - our consultants can help you with guidance in technical decisions
     - title: Flexible
       icon: fa-wrench
       content: >
-        Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl
-        amet mattis, sed a rutrum accumsan sed. Suspendisse eu.
+        We offer different type of work engagements which follow your organisations needs
   - type: heading
-    heading: A gigantic heading you can use for whatever
-    contents: With a much smaller subtitle hanging out just below it
+    heading: Why having us on board is beneficial in any circumstance?
+    contents: Whether your organisation is a start-up with limited resources to hire talent on its own or a larger company who needs specialists in certain technologies, we will be focusing our your needs to support your product and enable growth
   - type: posts
     #heading: Recent Posts
     content_type: posts

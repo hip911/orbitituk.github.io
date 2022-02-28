@@ -1,10 +1,12 @@
 ---
-title: The Sixth Thing
-image: images/pic02.jpg
-date: "2020-01-06T00:00:00"
+title: GCP Security Review or Implementation
+image: images/Google-Cloud-Platform-Security-Features.png
+//date: "2020-01-02T00:00:00"
+weight: 20
 tags:
-  - example
-  - duis neque
+  - GCP
+  - architecture
+  - automation
 ---
 Duis neque nisi, dapibus sed mattis et quis, nibh. Sed et dapibus nisl amet
 mattis, sed a rutrum accumsan sed. Suspendisse eu.

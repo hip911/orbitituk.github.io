@@ -1,5 +1,5 @@
 ---
 title: Portfolio
 menu: main
-weight: 90
+weight: 80
 ---
