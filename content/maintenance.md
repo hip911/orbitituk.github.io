@@ -1,10 +1,10 @@
 ---
-title: "Maintenance"
+title: "Managed Services"
 description: "Site Reliability Engineering"
 menu: main
 weight: 40
 image: images/maintenance.jpg
-image_alt: "Maintenance services of Orbit IT"
+image_alt: "Managed Services of Orbit IT"
 //tags: ["devops", "terraform", "gcp", "kubernetes", "cicd", "gitops"]
 sidebar_left: maintenance
 ---
